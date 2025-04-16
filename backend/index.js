@@ -15,7 +15,7 @@ dotenv.config({
 export const app = express();
 
 app.use(cors({
-    origin: process.env.FRONTEND_URI,
+    origin: "https://bank-ten-black.vercel.app/",
     methods: ["GET, POST, PUT, DELETE"],
     credentials: true,
     optionsSuccessStatus: 200
