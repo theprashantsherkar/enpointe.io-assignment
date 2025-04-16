@@ -78,6 +78,8 @@ export const BankerloginAPI = async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
     return res.cookie("token", token, {
         httpOnly: true,
+        sameSite: "None",
+        secure: true,
         maxAge: 24 * 60 * 60 * 1000,
     }).json({
         success: true,
@@ -124,6 +126,8 @@ export const CustomerloginAPI = async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
     return res.cookie("token", token, {
         httpOnly: true,
+        sameSite: "None",
+        secure:true,
         maxAge: 24 * 60 * 60 * 1000,
     }).json({
         success: true,
