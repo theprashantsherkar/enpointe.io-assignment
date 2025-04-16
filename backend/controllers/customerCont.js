@@ -11,7 +11,7 @@ export const depositAPI = async (req, res) => {
         return res.status(400).json({ message: 'Enter a valid amount' });
     }
     try {
- 
+
         const [lastTxnRows] = await db.execute(
             'SELECT balance FROM accounts WHERE user_id = ? ORDER BY transaction_time DESC LIMIT 1',
             [userId]
