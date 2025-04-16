@@ -15,7 +15,7 @@ dotenv.config({
 export const app = express();
 
 app.use(cors({
-    origin: "https://bank-ten-black.vercel.app",
+    origin: ["https://bank-ten-black.vercel.app", "http://localhost:5173"],
     methods: ["GET, POST, PUT, DELETE"],
     credentials: true,
     optionsSuccessStatus: 200

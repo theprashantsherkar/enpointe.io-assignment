@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './pages/banker/Login'
-import Register from './pages/banker/Register'
 import CustomerLogin from './pages/customer/Login'
 import CustomerRegister from './pages/customer/Register'
 import Transactions from './pages/banker/Transactions'
@@ -13,6 +12,7 @@ import axios from 'axios'
 import UserTransactions from './pages/banker/UserTransactions'
 
 export const backendUrl = 'https://bankingsystem-63sc.onrender.com'
+// export const backendUrl = 'http://localhost:9000'
 
 function App() {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
@@ -41,15 +41,14 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
+          <Route path='/register' element={<CustomerRegister />} />
         <Route path='/banker'>
           <Route path='login' element={<Login />} />
-          <Route path='register' element={<Register />} />
           <Route path='transactions' element={<Transactions />} />
           <Route path={`transactions/:id`} element={<UserTransactions />} />
         </Route>
         <Route path='/customer'>
           <Route path='login' element={<CustomerLogin />} />
-          <Route path='register' element={<CustomerRegister />} />
           <Route path='account' element={<Account />} />
         </Route>
 

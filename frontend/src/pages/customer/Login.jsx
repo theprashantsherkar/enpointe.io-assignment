@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Button from '../../components/Button'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import TextField from '@mui/material/TextField';
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
@@ -10,6 +10,7 @@ import Navbar from '../../components/Navbar';
 import { backendUrl } from '../../App';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function CustomerLogin() {
     const navigate = useNavigate();
@@ -56,7 +57,7 @@ function CustomerLogin() {
             <Navbar classname={`absolute`}/>
             <div className='flex items-center justify-center w-full h-screen '>
                 <div className='flex flex-col items-center justify-center w-1/3 h-1/2 bg-white shadow-lg rounded-lg p-5 gap-5'>
-                    <h1 className='text-3xl font-bold mb-4'>Customer's Login</h1>
+                    <h1 className='text-3xl font-bold mb-4 flex items-center justify-center gap-3'><ArrowBackIcon className='hover:cursor-pointer rounded-full border border-black scale-150' onClick={() => navigate(-1)} />Customer's Login</h1>
                     <FormControl className='flex flex-col gap-5 '>
                         <TextField
                             id="outlined-basic"
@@ -93,7 +94,11 @@ function CustomerLogin() {
                         </FormControl>
                     </FormControl>
                     <Button label='Login' handlerFunc={(e) => handleSubmit(e)} />
+                    <div className='flex items-center justify-center gap-3  w-full'>
+                        Don't have an account? <Link to={'/register'} className='text-blue-500'>Register here</Link>
+                    </div>
                 </div>
+
             </div>
         </>
     )
