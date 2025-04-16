@@ -46,7 +46,7 @@ function Account() {
                 withCredentials: true
             });
             setUser(null);
-            navigate('/customer/login');
+            navigate('/');
             toast.success("Logged out successfully");
         } catch (err) {
             console.log(err);

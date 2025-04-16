@@ -23,7 +23,7 @@ function Transactions() {
                 withCredentials: true
             });
             setUser(null);
-            navigate('/banker/login');
+            navigate('/');
             toast.success("Logged out successfully");
         } catch (error) {
             console.error(error);
