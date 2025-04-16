@@ -18,7 +18,6 @@ function CustomerRegister() {
     const [username, setUsername] = React.useState('')
     const [value, setValue] = React.useState("");
     const [inputValue, setInputValue] = React.useState('');
-    const { setUser, setIsLoggedIn, user } = useContext(UserContext);
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [showPassword, setShowPassword] = React.useState(false);
