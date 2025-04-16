@@ -12,7 +12,7 @@ import { UserContext } from './context/UserContext'
 import axios from 'axios'
 import UserTransactions from './pages/banker/UserTransactions'
 
-export const backendUrl = 'http://localhost:9000'
+export const backendUrl = 'https://bankingsystem-63sc.onrender.com'
 
 function App() {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
