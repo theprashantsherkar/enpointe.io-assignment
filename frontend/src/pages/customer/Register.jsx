@@ -26,7 +26,7 @@ function CustomerRegister() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!email || !password) {
+        if (!email || !password || !username || !value) {
             toast.error("Please fill all the fields");
             return;
         }
@@ -44,14 +44,8 @@ function CustomerRegister() {
             }
             );
             if (response.data.success) {
-                setUser(response.data.user);
-                setIsLoggedIn(true);
-                if (value === "Banker") {
-                    navigate('/banker/transactions');
-                } else {
-                    navigate('/customer/account');
-                }
-                toast.success(`Account created successfully!`);
+                navigate('/');
+                toast.success(`Account created successfully, now login!`);
             } else {
                 toast.error(response.data.message);
             }
