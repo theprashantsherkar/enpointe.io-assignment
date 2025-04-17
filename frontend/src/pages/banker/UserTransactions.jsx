@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { backendUrl } from '../../App';
 
 function UserTransactions() {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ function UserTransactions() {
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-                const response = await axios.get(`http://localhost:9000/api/v1/banker/getAccounts?id=${id}`, {
+                const response = await axios.get(`${backendUrl}/api/v1/banker/getAccounts?id=${id}`, {
                     headers: {
                         'Content-Type': 'application/json',
                     },

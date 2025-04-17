@@ -4,7 +4,6 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Autocomplete, Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/UserContext';
 import { backendUrl } from '../../App';
 import axios from 'axios';
 import toast from 'react-hot-toast';
